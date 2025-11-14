@@ -25,7 +25,23 @@ See [`mcp-servers/`](./mcp-servers/) for individual server documentation.
 
 ## Using These Customizations
 
-### Skills
+### Option 1: Install as Plugin (Recommended)
+
+Install everything with a single command:
+
+```bash
+# Add the marketplace
+/plugin marketplace add guglielmo/claude-customization
+
+# Install the plugin
+/plugin install issue-time-tracking-workflow
+```
+
+This installs both the skill and the MCP server automatically.
+
+### Option 2: Manual Installation
+
+#### Skills
 
 To use a skill from this repository:
 
@@ -36,7 +52,7 @@ To use a skill from this repository:
 
 2. The skill will be available in your next Claude Code session
 
-### MCP Servers
+#### MCP Servers
 
 Each MCP server has its own installation and configuration instructions. See the individual server directories for details.
 
