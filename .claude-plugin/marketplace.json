@@ -12,6 +12,29 @@
   },
   "plugins": [
     {
+      "name": "depp-release",
+      "description": "Workflow di release semantica in 3 fasi: analisi versioning, aggiornamento documentazione, pubblicazione tag e push remoto",
+      "version": "1.0.0",
+      "author": {
+        "name": "Guglielmo Celata",
+        "email": "guglielmo.celata@gmail.com"
+      },
+      "homepage": "https://github.com/guglielmo/claude-customization",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/guglielmo/claude-customization.git"
+      },
+      "license": "MIT",
+      "keywords": [
+        "release",
+        "semver",
+        "changelog",
+        "documentation",
+        "git-workflow"
+      ],
+      "source": "./plugins/depp-release"
+    },
+    {
       "name": "issue-time-tracking-workflow",
       "description": "Automates synchronized issue status tracking and time logging across GitLab/GitHub and TMetric with strict single-timer enforcement",
       "version": "1.0.0",

@@ -1,0 +1,16 @@
+{
+  "name": "depp-release",
+  "version": "1.0.0",
+  "description": "Semantic release workflow: analisi versioning, aggiornamento documentazione, pubblicazione tag e push remoto",
+  "author": {
+    "name": "DEPP - Dipartimento per la programmazione e il coordinamento della politica economica",
+    "url": "https://github.com/guglielmo"
+  },
+  "homepage": "https://github.com/guglielmo/claude-customization",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/guglielmo/claude-customization.git"
+  },
+  "license": "MIT",
+  "keywords": ["release", "semver", "changelog", "documentation", "git-workflow"]
+}
