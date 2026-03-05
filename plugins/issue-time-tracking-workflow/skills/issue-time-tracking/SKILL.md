@@ -25,6 +25,14 @@ Automates issue status and time tracking across platforms. Single command starts
 - Bulk issue updates
 - Issue creation/deletion
 
+## Announcing Skill Usage
+
+**REQUIRED**: Before executing any workflow, announce:
+
+"I'm using the issue-time-tracking skill to [start work on/stop work on/check status of] issue #N."
+
+This confirms skill is active and helps user understand the workflow being followed.
+
 ## Platform Auto-Detection
 
 Auto-detect GitLab vs GitHub from git remote:
