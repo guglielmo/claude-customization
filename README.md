@@ -14,7 +14,7 @@ Vedi [`plugins/semantic-release/`](./plugins/semantic-release/) per i dettagli t
 
 ### issue-time-tracking-workflow
 
-Sincronizzazione automatica dello stato delle issue e del time logging tra GitLab/GitHub e TMetric con gestione rigorosa del timer singolo.
+Sincronizzazione automatica dello stato delle issue e del time logging tra GitLab/GitHub e [TMetric](https://tmetric.com/) con gestione rigorosa del timer singolo.
 
 Vedi [`plugins/issue-time-tracking-workflow/`](./plugins/issue-time-tracking-workflow/) per i dettagli.
 
