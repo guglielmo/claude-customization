@@ -44,8 +44,8 @@ Vedi [`plugins/issue-time-tracking-workflow/`](./plugins/issue-time-tracking-wor
 /plugin marketplace add guglielmo/claude-customization
 
 # 2. Installare i plugin desiderati
-/plugin install depp-release@guglielmo-claude-customizations
-/plugin install issue-time-tracking-workflow@guglielmo-claude-customizations
+/plugin install depp-release@depp-plugins
+/plugin install issue-time-tracking-workflow@depp-plugins
 ```
 
 ---
