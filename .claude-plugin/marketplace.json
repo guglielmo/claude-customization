@@ -8,14 +8,14 @@
   },
   "plugins": [
     {
-      "name": "depp-release",
+      "name": "semantic-release",
       "description": "Workflow di release semantica in 3 fasi: analisi versioning, aggiornamento documentazione, pubblicazione tag e push remoto",
       "version": "1.0.0",
       "author": {
         "name": "Guglielmo Celata",
         "email": "guglielmo.celata@gmail.com"
       },
-      "source": "./plugins/depp-release",
+      "source": "./plugins/semantic-release",
       "category": "productivity"
     },
     {

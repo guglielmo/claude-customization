@@ -36,10 +36,13 @@ This skill **requires** the [tmetric-minimal-mcp](../../mcp-servers/tmetric-mini
 
 1. **Install dependencies** (see above)
 
-2. **Copy skill to your skills directory**:
+2. **Install skill globally**:
    ```bash
-   cp SKILL.md ~/.claude/skills/issue-time-tracking.md
+   mkdir -p ~/.claude/skills/issue-time-tracking
+   cp SKILL.md ~/.claude/skills/issue-time-tracking/
    ```
+
+   The skill must be in a subdirectory named after the skill, containing a `SKILL.md` file.
 
 3. **Verify** in next Claude Code session:
    ```

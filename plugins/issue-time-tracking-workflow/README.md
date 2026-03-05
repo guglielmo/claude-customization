@@ -18,7 +18,7 @@ This plugin bundles:
 /plugin marketplace add guglielmo/claude-customization
 
 # Install the plugin
-/plugin install issue-time-tracking-workflow
+/plugin install issue-time-tracking-workflow@depp-plugins
 ```
 
 When prompted for `TMETRIC_API_TOKEN`, enter your TMetric API token.

@@ -1,5 +1,5 @@
 {
-  "name": "depp-release",
+  "name": "semantic-release",
   "version": "1.0.0",
   "description": "Semantic release workflow: analisi versioning, aggiornamento documentazione, pubblicazione tag e push remoto",
   "author": {

@@ -10,22 +10,11 @@ Raccolta di personalizzazioni per [Claude Code](https://claude.ai/code) sviluppa
 
 ## Plugin disponibili
 
-### depp-release
+### semantic-release
 
-Workflow di release semantica in 3 fasi: analisi del repository, aggiornamento della documentazione e pubblicazione del tag su remoto.
+Workflow di release semantica in 3 fasi: analisi del repository, aggiornamento della documentazione e pubblicazione del tag su remoto. Include comandi slash (`/release`, `/prepare-release`, `/prepare-docs`, `/publish-release`), agenti specializzati per ogni fase e una skill che si attiva proattivamente quando si parla di release o versioning.
 
-**Comandi**:
-| Comando | Descrizione |
-|---------|-------------|
-| `/release` | Esegue le 3 fasi in sequenza con conferma tra una e l'altra |
-| `/prepare-release` | Analizza i commit dalla last release e raccomanda MAJOR / MINOR / PATCH |
-| `/prepare-docs` | Aggiorna CHANGELOG, README, STATUS, CLAUDE.md e version files; crea il commit di documentazione |
-| `/publish-release` | Crea il tag annotato e fa push di commit e tag su remoto |
-
-**Skill inclusa**: `semantic-release` — suggerisce proattivamente il workflow quando si parla di release o versioning.
-
-**Agenti inclusi** (chiamati internamente dagli orchestratori):
-`prepare-release` · `prepare-docs` · `publish-release` · `changelog-writer` · `readme-writer` · `status-writer` · `claudemd-writer` · `contributing-writer`
+Vedi [`plugins/semantic-release/`](./plugins/semantic-release/) per i dettagli tecnici.
 
 ---
 
@@ -44,7 +33,7 @@ Vedi [`plugins/issue-time-tracking-workflow/`](./plugins/issue-time-tracking-wor
 /plugin marketplace add guglielmo/claude-customization
 
 # 2. Installare i plugin desiderati
-/plugin install depp-release@depp-plugins
+/plugin install semantic-release@depp-plugins
 /plugin install issue-time-tracking-workflow@depp-plugins
 ```
 
