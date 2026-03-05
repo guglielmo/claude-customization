@@ -1,3 +1,0 @@
-[submodule "mcp-servers/tmetric-minimal-mcp"]
-	path = mcp-servers/tmetric-minimal-mcp
-	url = https://github.com/guglielmo/tmetric-minimal-mcp.git
