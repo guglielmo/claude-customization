@@ -10,7 +10,7 @@ Le skill qui sviluppate usano la metodologia TDD documentata in `skills/CLAUDE.m
 |-------|-------------|
 | [`issue-time-tracking`](./issue-time-tracking/) | Workflow per avviare/fermare il lavoro su issue con sincronizzazione GitLab/GitHub e TMetric |
 
-> **Nota**: `issue-time-tracking` è inclusa anche nel plugin `issue-time-tracking-workflow`. La versione standalone non richiede il MCP server TMetric.
+> **Nota**: questa è la directory di **sviluppo** della skill `issue-time-tracking` (con artefatti TDD: test, baseline, risultati). La skill compilata finale (`SKILL.md`) viene copiata sia in `~/.claude/skills/` per uso diretto, sia nel plugin `issue-time-tracking-workflow` per distribuzione via marketplace.
 
 ## Deployment
 
