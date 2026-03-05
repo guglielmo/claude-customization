@@ -1,94 +1,74 @@
 # Claude Code Customizations
 
-Workspace for developing and distributing [Claude Code](https://claude.ai/code) customizations: plugin, skill, agenti e MCP server.
+Raccolta di personalizzazioni per [Claude Code](https://claude.ai/code) sviluppate da Guglielmo Celata per il team DEPP. Il repository contiene:
 
-## Plugins
+- **Plugin** — workflow completi installabili con un comando, con agenti, comandi slash e skill integrate
+- **Skill standalone** — comportamenti specializzati attivabili in qualsiasi progetto
+- **MCP Server** — integrazioni con servizi esterni (TMetric, Google Docs)
+
+---
+
+## Plugin disponibili
 
 ### depp-release
 
-Workflow di release semantica in 3 fasi con gestione completa di versioning, documentazione e pubblicazione.
+Workflow di release semantica in 3 fasi: analisi del repository, aggiornamento della documentazione e pubblicazione del tag su remoto.
 
-**Comandi disponibili**:
-- `/release` — pipeline completa (analisi → documentazione → pubblicazione)
-- `/prepare-release` — fase 1: analizza i commit e raccomanda MAJOR/MINOR/PATCH
-- `/prepare-docs` — fase 2: aggiorna CHANGELOG, README, STATUS, CLAUDE.md e version files
-- `/publish-release` — fase 3: crea il tag annotato e fa push su remoto
+**Comandi**:
+| Comando | Descrizione |
+|---------|-------------|
+| `/release` | Esegue le 3 fasi in sequenza con conferma tra una e l'altra |
+| `/prepare-release` | Analizza i commit dalla last release e raccomanda MAJOR / MINOR / PATCH |
+| `/prepare-docs` | Aggiorna CHANGELOG, README, STATUS, CLAUDE.md e version files; crea il commit di documentazione |
+| `/publish-release` | Crea il tag annotato e fa push di commit e tag su remoto |
 
-**Skill inclusa**: `semantic-release` — si auto-attiva quando si parla di release o versioning.
+**Skill inclusa**: `semantic-release` — suggerisce proattivamente il workflow quando si parla di release o versioning.
 
-**Agenti inclusi**: `prepare-release`, `prepare-docs`, `publish-release`, `changelog-writer`, `readme-writer`, `status-writer`, `claudemd-writer`, `contributing-writer`.
+**Agenti inclusi** (chiamati internamente dagli orchestratori):
+`prepare-release` · `prepare-docs` · `publish-release` · `changelog-writer` · `readme-writer` · `status-writer` · `claudemd-writer` · `contributing-writer`
+
+---
 
 ### issue-time-tracking-workflow
 
-Sincronizzazione automatica dello stato delle issue e del time logging tra GitLab/GitHub e TMetric.
+Sincronizzazione automatica dello stato delle issue e del time logging tra GitLab/GitHub e TMetric con gestione rigorosa del timer singolo.
 
-## Contents
+Vedi [`plugins/issue-time-tracking-workflow/`](./plugins/issue-time-tracking-workflow/) per i dettagli.
 
-### 📚 Skills
+---
 
-Custom Claude Code skills sviluppate con metodologia TDD.
-
-**Current Skills**:
-- **issue-time-tracking** — sincronizzazione issue tracking e time logging su GitLab/GitHub e TMetric
-
-See [`skills/`](./skills/) for the development workspace and methodology.
-
-### 🔌 MCP Servers
-
-Model Context Protocol server implementations for extending Claude Code capabilities.
-
-**Current Servers**:
-- **tmetric-minimal-mcp** — TMetric time tracking integration
-- **mcp-googledocs-server** — Google Docs integration
-
-See [`mcp-servers/`](./mcp-servers/) for individual server documentation.
-
-## Using These Customizations
-
-### Option 1: Install as Plugin (Recommended)
+## Installazione
 
 ```bash
-# Add the marketplace
+# 1. Aggiungere il marketplace
 /plugin marketplace add guglielmo/claude-customization
 
-# Install il workflow di release
+# 2. Installare i plugin desiderati
 /plugin install depp-release@guglielmo-claude-customizations
-
-# Install il workflow di issue tracking
 /plugin install issue-time-tracking-workflow@guglielmo-claude-customizations
 ```
 
-### Option 2: Manual Installation
+---
 
-#### Skills
+## Skill standalone
 
-To use a skill from this repository:
+- **issue-time-tracking** — disponibile anche come skill standalone (senza MCP server) per ambienti che non richiedono TMetric
 
-1. Copy the `SKILL.md` file to your personal skills directory:
-   ```bash
-   cp skills/skill-name/SKILL.md ~/.claude/skills/skill-name.md
-   ```
+Vedi [`skills/`](./skills/) per la documentazione e la metodologia di sviluppo.
 
-2. The skill will be available in your next Claude Code session
+## MCP Server
 
-#### MCP Servers
+- **tmetric-minimal-mcp** — integrazione con TMetric per il time tracking
+- **mcp-googledocs-server** — integrazione con Google Docs
 
-Each MCP server has its own installation and configuration instructions. See the individual server directories for details.
+Vedi [`mcp-servers/`](./mcp-servers/) per le istruzioni di configurazione dei singoli server.
 
-## Development
+---
 
-This repository uses a structured TDD approach for skill development:
+## Licenza
 
-- **RED Phase**: Test baseline agent behavior without the skill
-- **GREEN Phase**: Write minimal skill to address failures
-- **REFACTOR Phase**: Close loopholes and test until bulletproof
+MIT — libero utilizzo, modifica e ridistribuzione.
 
-See [`skills/CLAUDE.md`](./skills/CLAUDE.md) for the complete development workflow.
+## Autore
 
-## License
-
-MIT License - Feel free to use, modify, and share these customizations.
-
-## Author
-
-Guglielmo Celata - [@guglielmo](https://github.com/guglielmo)
+Guglielmo Celata — [@guglielmo](https://github.com/guglielmo)
