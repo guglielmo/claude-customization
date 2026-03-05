@@ -1,86 +1,64 @@
-# Issue Time Tracking Workflow Plugin
+# issue-time-tracking-workflow Plugin
 
-Complete workflow automation for issue tracking and time logging across GitLab/GitHub and TMetric.
+Automazione del workflow per il tracking delle issue e il time logging su GitLab/GitHub e TMetric, con gestione rigorosa del timer singolo.
 
-## What's Included
+## Cosa include
 
-This plugin bundles:
+| Componente | Posizione | Descrizione |
+|------------|-----------|-------------|
+| Skill `issue-time-tracking` | `skills/issue-time-tracking.md` | Si attiva automaticamente quando si parla di issue o timer |
+| MCP server `tmetric-minimal` | submodule esterno ([guglielmo/tmetric-minimal-mcp](https://github.com/guglielmo/tmetric-minimal-mcp)) | API TMetric: start/stop timer, lista progetti |
 
-- **issue-time-tracking skill** - Automated workflow for starting/stopping work on issues
-- **tmetric-minimal MCP server** - TMetric time tracking integration
+## Utilizzo
 
-## Installation
-
-### Option 1: From Marketplace (Recommended)
-
-```bash
-# Add the marketplace
-/plugin marketplace add guglielmo/claude-customization
-
-# Install the plugin
-/plugin install issue-time-tracking-workflow@guglielmo-plugins
-```
-
-When prompted for `TMETRIC_API_TOKEN`, enter your TMetric API token.
-
-### Option 2: Manual Installation
-
-1. Install the skill:
-   ```bash
-   cp skills/issue-time-tracking.md ~/.claude/skills/issue-time-tracking.md
-   ```
-
-2. Install the MCP server:
-   ```bash
-   claude mcp add --scope user tmetric-minimal --env TMETRIC_API_TOKEN=your_token_here -- npx -y github:guglielmo/tmetric-minimal-mcp
-   ```
-
-## Getting Your TMetric API Token
-
-1. Log in to [TMetric](https://app.tmetric.com/)
-2. Go to Settings → Integrations → API
-3. Generate a new API token
-4. Copy and use it during plugin installation
-
-## Usage
-
-Once installed, use natural language commands:
+Una volta installato, usa il linguaggio naturale:
 
 ```
-# Start work
-"start working on issue #123"
-
-# Stop work with summary
-"stop working on #123 - fixed the authentication bug"
-
-# Pause/resume
-"pause timer"
-"resume timer"
-
-# Check status
-"what am I working on?"
+"inizio a lavorare sulla issue #123"
+"smetto di lavorare su #123 - corretto il bug di autenticazione"
+"metti in pausa il timer"
+"riprendi il timer"
+"su cosa sto lavorando?"
 ```
 
-## Features
+## Funzionalità
 
-- ✅ **Single-timer enforcement** - Prevents accidentally running multiple timers
-- ✅ **Platform auto-detection** - Works with both GitLab and GitHub
-- ✅ **Smart project mapping** - Suggests TMetric projects based on repository context
-- ✅ **Natural language** - Extracts work summaries from your commands
-- ✅ **Error recovery** - Asks before rolling back partial operations
+- **Timer singolo** — impedisce di avviare più timer contemporaneamente
+- **Rilevamento piattaforma** — funziona con GitLab e GitHub
+- **Mapping progetti** — suggerisce il progetto TMetric in base al repository
+- **Linguaggio naturale** — estrae il sommario del lavoro dal comando
+- **Recovery errori** — chiede conferma prima di annullare operazioni parziali
 
-## Requirements
+## Requisiti
 
-- **glab** (for GitLab) or **gh** (for GitHub) CLI installed and authenticated
-- **TMetric account** with API access
-- **git** for repository context
+- **glab** (GitLab) o **gh** (GitHub) — CLI installata e autenticata
+- **Account TMetric** con accesso API
 
-## Documentation
+## Struttura
 
-- [Skill Documentation](../../skills/issue-time-tracking/)
-- [MCP Server Documentation](../../mcp-servers/tmetric-minimal-mcp/)
-- [Development Process](../../skills/issue-time-tracking/test-scenarios.md)
+```
+plugins/issue-time-tracking-workflow/
+├── skills/
+│   └── issue-time-tracking.md     ← skill installata dal plugin
 
-## License
+skills/issue-time-tracking/        ← workspace di sviluppo TDD (non installato)
+├── SKILL.md
+├── test-scenarios.md
+├── baseline-results.md
+├── green-phase-results.md
+└── quality-checklist.md
 
-MIT License
+mcp-servers/tmetric-minimal-mcp/   ← git submodule (repo separato)
+```
+
+> **Nota**: la skill è disponibile anche in modo standalone (senza MCP server) per ambienti che non richiedono TMetric. Vedi [`skills/issue-time-tracking/`](../../skills/issue-time-tracking/).
+
+## Ottenere il token TMetric API
+
+1. Accedi a [TMetric](https://app.tmetric.com/)
+2. Vai su Impostazioni → Integrazioni → API
+3. Genera un nuovo token API
+
+## Licenza
+
+MIT
