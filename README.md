@@ -1,6 +1,6 @@
 # Claude Code Customizations
 
-Raccolta di personalizzazioni per [Claude Code](https://claude.ai/code) sviluppate da Guglielmo Celata per il team DEPP. Il repository contiene:
+Raccolta di personalizzazioni per [Claude Code](https://claude.ai/code) sviluppate da Guglielmo Celata e distribuite come marketplace **guglielmo-plugins**. Il repository contiene:
 
 - **Plugin** — workflow completi installabili con un comando, con agenti, comandi slash e skill integrate
 - **Skill standalone** — comportamenti specializzati attivabili in qualsiasi progetto

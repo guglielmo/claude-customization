@@ -19,7 +19,7 @@ plugins/<nome>/
 ```
 
 **Plugin attivi**:
-- **depp-release/** — workflow release semantica (3 fasi: analisi, docs, publish)
+- **semantic-release/** — workflow release semantica (3 fasi: analisi, docs, publish)
 - **issue-time-tracking-workflow/** — sincronizzazione issue tracking e TMetric
 
 **Sviluppo locale**: gli agenti in `plugins/<nome>/agents/` sono referenziati via symlink da `~/.claude/agents/` per uso immediato durante lo sviluppo. Modificare i file nel plugin, non i symlink.
