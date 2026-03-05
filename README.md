@@ -1,12 +1,6 @@
-# Claude Code Customizations
+# guglielmo-plugins
 
-Raccolta di personalizzazioni per [Claude Code](https://claude.ai/code) sviluppate da Guglielmo Celata e distribuite come marketplace **guglielmo-plugins**. Il repository contiene:
-
-- **Plugin** — workflow completi installabili con un comando, con agenti, comandi slash e skill integrate
-- **Skill standalone** — comportamenti specializzati attivabili in qualsiasi progetto
-- **MCP Server** — integrazioni con servizi esterni (TMetric, Google Docs)
-
----
+Marketplace di personalizzazioni per [Claude Code](https://claude.ai/code) sviluppate da Guglielmo Celata. Ogni plugin è installabile con un comando e include agenti, comandi slash e skill integrate.
 
 ## Plugin disponibili
 
@@ -36,21 +30,6 @@ Vedi [`plugins/issue-time-tracking-workflow/`](./plugins/issue-time-tracking-wor
 /plugin install semantic-release@guglielmo-plugins
 /plugin install issue-time-tracking-workflow@guglielmo-plugins
 ```
-
----
-
-## Skill standalone
-
-- **issue-time-tracking** — disponibile anche come skill standalone (senza MCP server) per ambienti che non richiedono TMetric
-
-Vedi [`skills/`](./skills/) per la documentazione e la metodologia di sviluppo.
-
-## MCP Server
-
-- **tmetric-minimal-mcp** — integrazione con TMetric per il time tracking
-- **mcp-googledocs-server** — integrazione con Google Docs
-
-Vedi [`mcp-servers/`](./mcp-servers/) per le istruzioni di configurazione dei singoli server.
 
 ---
 
