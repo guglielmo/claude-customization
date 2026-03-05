@@ -4,16 +4,28 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Purpose
 
-Personal Claude Code customization workspace containing:
-- **skills/** - Custom Claude Code skills development workspace
-- **mcp-servers/** - MCP (Model Context Protocol) server implementations
-
-This repository serves as both a development workspace and a shareable collection of Claude customizations.
+Workspace per sviluppare e distribuire Claude Code customizations come plugin installabili dal marketplace. Contiene plugin con agenti, comandi e skill, oltre a skill standalone e MCP server.
 
 ## Repository Structure
 
+### plugins/
+Plugin installabili dal marketplace. Ogni plugin ha la struttura standard:
+```
+plugins/<nome>/
+├── .claude-plugin/plugin.json
+├── agents/       ← agenti specializzati
+├── commands/     ← slash commands utente
+└── skills/       ← skill con auto-attivazione
+```
+
+**Plugin attivi**:
+- **depp-release/** — workflow release semantica (3 fasi: analisi, docs, publish)
+- **issue-time-tracking-workflow/** — sincronizzazione issue tracking e TMetric
+
+**Sviluppo locale**: gli agenti in `plugins/<nome>/agents/` sono referenziati via symlink da `~/.claude/agents/` per uso immediato durante lo sviluppo. Modificare i file nel plugin, non i symlink.
+
 ### skills/
-Workspace for developing custom Claude Code skills using TDD methodology.
+Workspace per sviluppare skill standalone con metodologia TDD.
 
 **Deployment**: Completed skills are deployed to `~/.claude/skills/`
 
@@ -30,11 +42,15 @@ See `skills/CLAUDE.md` for detailed development workflow.
 MCP server implementations, including:
 - **tmetric-minimal-mcp/** - TMetric time tracking integration
 - **mcp-googledocs-server/** - Google Docs integration
-- Other server implementations
 
 **Note**: Some MCP servers may be git submodules or separate repositories.
 
 ## Development Workflow
+
+### Aggiungere un nuovo plugin
+1. Creare `plugins/<nome>/` con la struttura standard
+2. Aggiungere la voce in `.claude-plugin/marketplace.json`
+3. Per uso locale: creare symlink da `~/.claude/agents/<agente>.md` → `plugins/<nome>/agents/<agente>.md`
 
 ### Creating New Skills
 1. Navigate to `skills/` directory
@@ -44,12 +60,6 @@ MCP server implementations, including:
 
 ### Developing MCP Servers
 Each MCP server may have its own README and development instructions. Check individual server directories.
-
-### Publishing Skills
-Skills developed here are personal customizations. To share:
-1. Keep development artifacts in this repository
-2. Users can copy `SKILL.md` files to their own `~/.claude/skills/`
-3. Consider contributing broadly-useful skills to upstream projects
 
 ## Git Structure
 
