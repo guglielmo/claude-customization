@@ -33,8 +33,8 @@ Vedi [`plugins/issue-time-tracking-workflow/`](./plugins/issue-time-tracking-wor
 /plugin marketplace add guglielmo/claude-customization
 
 # 2. Installare i plugin desiderati
-/plugin install semantic-release@depp-plugins
-/plugin install issue-time-tracking-workflow@depp-plugins
+/plugin install semantic-release@guglielmo-plugins
+/plugin install issue-time-tracking-workflow@guglielmo-plugins
 ```
 
 ---
