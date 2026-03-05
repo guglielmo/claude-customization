@@ -1,8 +1,23 @@
-This is the directory where skills will be built. A sort of source directory for each skills.\
+# skills/
 
-Each skill will get a directory, so that the process of creating it can be integrated with plans, reasoning and contexts.
-At the end of the process, an md document will be produced and moved to the correct place, which I believe it to be:
-`~/.claude/skills`.
+Workspace di sviluppo per skill standalone da distribuire come `~/.claude/skills/`.
 
-I am using obra's superpowers plugin, that contains a skill creation skill, so, whenever creating a skill, it will undergo a proper process and the prompt to create it will be optimized automatically.
+Le skill qui sviluppate usano la metodologia TDD documentata in `skills/CLAUDE.md`: ogni skill passa per le fasi RED (baseline senza skill), GREEN (skill minimale) e REFACTOR (chiusura dei loophole), con artefatti separati per ogni fase.
 
+## Skill disponibili
+
+| Skill | Descrizione |
+|-------|-------------|
+| [`issue-time-tracking`](./issue-time-tracking/) | Workflow per avviare/fermare il lavoro su issue con sincronizzazione GitLab/GitHub e TMetric |
+
+> **Nota**: `issue-time-tracking` è inclusa anche nel plugin `issue-time-tracking-workflow`. La versione standalone non richiede il MCP server TMetric.
+
+## Deployment
+
+```bash
+cp skills/<nome>/SKILL.md ~/.claude/skills/<nome>.md
+```
+
+## Sviluppo nuove skill
+
+Vedi [`CLAUDE.md`](./CLAUDE.md) per il workflow completo (metodologia TDD con `superpowers:writing-skills`).
