@@ -17,16 +17,11 @@ claude mcp add --scope user tmetric-minimal --env TMETRIC_API_TOKEN=<token> -- n
 ---
 
 ### mcp-googledocs-server
-Integrazione con Google Docs: lettura e scrittura di documenti tramite API Google.
+**Progetto esterno** — copia locale di [`a-bonus/google-docs-mcp`](https://github.com/a-bonus/google-docs-mcp)
 
-Vedi [`mcp-googledocs-server/`](./mcp-googledocs-server/) per configurazione e credenziali.
+Integrazione con Google Docs e Google Drive: lettura, scrittura, formattazione, gestione commenti e file. Configurato localmente con credenziali OAuth Google (gitignorate).
 
----
-
-### mcp-servers-management
-Sistema di gestione per abilitare/disabilitare MCP server per progetto tramite file `.mcp.json` locali e comandi slash (`/mcp-list`, `/mcp-enable`, `/mcp-disable`, `/mcp-sync`).
-
-Vedi [`mcp-servers-management/`](./mcp-servers-management/) per le istruzioni di setup.
+Vedi [`mcp-googledocs-server/README.md`](./mcp-googledocs-server/README.md) per setup e configurazione.
 
 ---
 
