@@ -1,14 +1,10 @@
 {
   "name": "guglielmo-claude-customizations",
-  "metadata": {
-    "description": "Personal Claude Code customizations by Guglielmo Celata, including issue time tracking workflow and TMetric integration",
-    "version": "1.0.0",
-    "pluginRoot": "."
-  },
+  "version": "1.0.0",
+  "description": "Personal Claude Code customizations by Guglielmo Celata, including issue time tracking workflow and TMetric integration",
   "owner": {
     "name": "Guglielmo Celata",
-    "email": "guglielmo.celata@gmail.com",
-    "url": "https://github.com/guglielmo"
+    "email": "guglielmo.celata@gmail.com"
   },
   "plugins": [
     {
@@ -19,20 +15,8 @@
         "name": "Guglielmo Celata",
         "email": "guglielmo.celata@gmail.com"
       },
-      "homepage": "https://github.com/guglielmo/claude-customization",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/guglielmo/claude-customization.git"
-      },
-      "license": "MIT",
-      "keywords": [
-        "release",
-        "semver",
-        "changelog",
-        "documentation",
-        "git-workflow"
-      ],
-      "source": "./plugins/depp-release"
+      "source": "./plugins/depp-release",
+      "category": "productivity"
     },
     {
       "name": "issue-time-tracking-workflow",
@@ -42,40 +26,8 @@
         "name": "Guglielmo Celata",
         "email": "guglielmo.celata@gmail.com"
       },
-      "homepage": "https://github.com/guglielmo/claude-customization",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/guglielmo/claude-customization.git"
-      },
-      "license": "MIT",
-      "keywords": [
-        "time-tracking",
-        "tmetric",
-        "gitlab",
-        "github",
-        "issue-management",
-        "workflow-automation"
-      ],
       "source": "./plugins/issue-time-tracking-workflow",
-      "commands": {},
-      "agents": {},
-      "skills": {
-        "issue-time-tracking": {
-          "source": "./skills/issue-time-tracking.md"
-        }
-      },
-      "mcpServers": {
-        "tmetric-minimal": {
-          "command": "npx",
-          "args": [
-            "-y",
-            "github:guglielmo/tmetric-minimal-mcp"
-          ],
-          "env": {
-            "TMETRIC_API_TOKEN": ""
-          }
-        }
-      }
+      "category": "productivity"
     }
   ]
 }
