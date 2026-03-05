@@ -1,7 +1,7 @@
 {
-  "name": "semantic-release",
+  "name": "issue-time-tracking-workflow",
   "version": "1.0.0",
-  "description": "Semantic release workflow: analisi versioning, aggiornamento documentazione, pubblicazione tag e push remoto",
+  "description": "Automated issue tracking and time logging across GitLab/GitHub and TMetric with strict single-timer enforcement",
   "author": {
     "name": "Guglielmo Celata",
     "email": "guglielmo.celata@gmail.com"
