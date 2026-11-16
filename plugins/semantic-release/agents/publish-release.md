@@ -1,7 +1,7 @@
 ---
 name: publish-release
 description: Create git tag and push release to remote repository
-model: sonnet
+model: haiku
 color: red
 ---
 
